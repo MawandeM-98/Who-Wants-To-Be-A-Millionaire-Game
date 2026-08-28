@@ -13,13 +13,13 @@ const SAFE_HAVENS = [1000, 32000];
 const QUESTION_BANK = [
     // Tier 0 - Easy
     [
-        { q: "Which planet is known as the Red Planet?", options: ["Venus", "Mars", "Jupiter", "Mercury"], answer: 1 },
+        { q: "Which country in Africa was not colonised?", options: ["Ethiopia", "Ghana", "Nigeria", "Kenya"], answer: 0 },
         { q: "How many continents are there on Earth?", options: ["5", "6", "7", "8"], answer: 2 },
-        { q: "What is the largest mammal in the world?", options: ["African elephant", "Blue whale", "Giraffe", "Orca"], answer: 1 },
+        { q: "Which calendar is used by the Jews?", options: ["Lunar", "Solar", "Gregorian", "Lunisolar"], answer: 3 },
         { q: "Which gas do plants primarily absorb for photosynthesis?", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], answer: 2 },
         { q: "How many strings does a standard guitar have?", options: ["4", "5", "6", "7"], answer: 2 },
         { q: "What is the capital city of Japan?", options: ["Osaka", "Kyoto", "Tokyo", "Seoul"], answer: 2 },
-        { q: "Which animal is known as man's best friend?", options: ["Cat", "Dog", "Horse", "Parrot"], answer: 1 },
+        { q: "Who is known for being the father of psychedlic drug LSD?", options: ["Albert Hofmann", "Timothy Leary", "Ken Kesey", "Terence McKenna"], answer: 0 },
         { q: "How many days are there in a leap year?", options: ["364", "365", "366", "367"], answer: 2 },
         { q: "What colour do you get by mixing blue and yellow?", options: ["Purple", "Green", "Orange", "Brown"], answer: 1 },
         { q: "Which ocean is the largest?", options: ["Atlantic", "Indian", "Arctic", "Pacific"], answer: 3 },
@@ -35,7 +35,7 @@ const QUESTION_BANK = [
         { q: "In which year did the Berlin Wall fall?", options: ["1987", "1989", "1991", "1993"], answer: 1 },
         { q: "Who wrote the novel 'Things Fall Apart'?", options: ["Wole Soyinka", "Chinua Achebe", "Ngugi wa Thiong'o", "Ben Okri"], answer: 1 },
         { q: "What is the longest river in Africa?", options: ["Congo", "Zambezi", "Niger", "Nile"], answer: 3 },
-        { q: "Which country hosted the 2010 FIFA World Cup?", options: ["Brazil", "Germany", "South Africa", "Russia"], answer: 2 },
+        { q: "What year did Czar Nicolas II get executed?", options: ["1917", "1918", "1919", "1920"], answer: 1 },
         { q: "How many bones are in the adult human body?", options: ["186", "206", "226", "246"], answer: 1 },
         { q: "Which planet has the most moons?", options: ["Jupiter", "Saturn", "Uranus", "Neptune"], answer: 1 },
         { q: "What does 'CPU' stand for?", options: ["Central Process Unit", "Computer Personal Unit", "Central Processing Unit", "Core Processing Utility"], answer: 2 },
