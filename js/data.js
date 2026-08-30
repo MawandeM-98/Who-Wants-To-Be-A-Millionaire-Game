@@ -9,6 +9,8 @@ const QUESTION_BANK = [
     // Tier 0 - Easy
     [
         { q: "Which country in Africa was not colonised?", options: ["Ethiopia", "Ghana", "Nigeria", "Kenya"], answer: 0 },
+        { q: "In which year did boxing legend Salvador Sanchez defeat Juan Laporte?", options: ["1979", "1980", "1982", "1983"], answer: 1},
+        { q:"Which is the 3rd biggest cloud provider in the world in 2026?", options: ["Salesforce Cloud", "Microsoft Azure", "Amazon Web Services", "Google Cloud"], answer: 3},
         { q: "How many continents are there on Earth?", options: ["5", "6", "7", "8"], answer: 2 },
         { q: "Which calendar is used by the Jews?", options: ["Lunar", "Solar", "Gregorian", "Lunisolar"], answer: 3 },
         { q: "Which gas do plants primarily absorb for photosynthesis?", options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"], answer: 2 },
@@ -27,6 +29,7 @@ const QUESTION_BANK = [
     // Tier 1 - Medium
     [
         { q: "Which element has the chemical symbol 'Fe'?", options: ["Fluorine", "Iron", "Lead", "Francium"], answer: 1 },
+        { q: "What is the 10th element on the periodic table?", options: ["Magnesium", "Sodium", "Neon", "Aluminium"], answer: 2 },
         { q: "In which year did the Berlin Wall fall?", options: ["1987", "1989", "1991", "1993"], answer: 1 },
         { q: "Who wrote the novel 'Things Fall Apart'?", options: ["Wole Soyinka", "Chinua Achebe", "Ngugi wa Thiong'o", "Ben Okri"], answer: 1 },
         { q: "What is the longest river in Africa?", options: ["Congo", "Zambezi", "Niger", "Nile"], answer: 3 },
@@ -41,10 +44,14 @@ const QUESTION_BANK = [
         { q: "In music, how many lines does a standard stave have?", options: ["4", "5", "6", "7"], answer: 1 },
         { q: "Which sea is the saltiest body of water commonly named a sea?", options: ["Red Sea", "Dead Sea", "Caspian Sea", "Black Sea"], answer: 1 },
         { q: "Who developed the theory of general relativity?", options: ["Isaac Newton", "Niels Bohr", "Albert Einstein", "Max Planck"], answer: 2 },
+        { q: "What is Quentin Tarantinos 7th film?", options: ["Inglourious Basterds", "Django Unchained", "The Hateful Eight", "Once Upon a Time in Hollywood"], answer: 0 },
+        { q: "What does K stand for in the phonetic alphabet?", options: ["Kappa", "Kilo", "Kangaroo", "Kilowatt"], answer: 1 },
     ],
     // Tier 2 - Hard
     [
         { q: "Which Roman emperor ruled during the eruption of Vesuvius in AD 79?", options: ["Nero", "Titus", "Trajan", "Vespasian"], answer: 1 },
+        { q: "Which programming language was developed by Brendan Eich in 1995?", options: ["Python", "JavaScript", "Java", "C#"], answer: 1 },
+        { q: "What is the Economics term for how much demand or supply changes in response to shifts in factors like price or income?", options: ["Elasticity", "Volatility", "Inflation", "Marginality"], answer: 0 },
         { q: "What is the study of the shape of coastlines and their formation called?", options: ["Geomorphology", "Cartography", "Hydrology", "Pedology"], answer: 0 },
         { q: "Which mathematician introduced the concept of the 'Halting Problem'?", options: ["Kurt Gödel", "Alan Turing", "John von Neumann", "Alonzo Church"], answer: 1 },
         { q: "The Treaty of Tordesillas (1494) divided new lands between which two powers?", options: ["England and France", "Spain and Portugal", "Netherlands and Spain", "Portugal and France"], answer: 1 },
