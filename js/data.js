@@ -55,7 +55,10 @@ const QUESTION_BANK = [
         { q: "What is Quentin Tarantinos 7th film?", options: ["Inglourious Basterds", "Django Unchained", "The Hateful Eight", "Once Upon a Time in Hollywood"], answer: 0 },
         { q: "What does K stand for in the phonetic alphabet?", options: ["Kappa", "Kilo", "Kangaroo", "Kilowatt"], answer: 1 },
         { q: "Marked by differences in activity and appearance, 'solitary' and 'gregarious' are terms used to describe what type of animals?", options: ["Mammals", "Birds", "Insects", "Reptiles"], answer: 2 },
-        { q: "Which of these cetaceans is classified as a 'toothless whale'?", options: ["Gray Whale", "Minke Whale", "Humpback Whale", "Sperm Whale"], answer: 0 }
+        { q: "Which of these cetaceans is classified as a 'toothless whale'?", options: ["Gray Whale", "Minke Whale", "Humpback Whale", "Sperm Whale"], answer: 3 },
+        { q: "What was the name of the left handed judge who assasinated King Eglon of Moab in the Bible?", options: ["Ehud", "Gideon", "Samson", "Abimelech"], answer: 0 },
+        { q: "What is the largest state-directed bank heist in history?", options: ["Bangladesh Bank Heist", "Central Bank of Iraq Heist", "Banco Central Burglary", "The Great Train Robbery"], answer: 1 },
+        { q: "In 2012, Paul Thomas Anderson directed a film based on a novel by Thomas Pynchon. What was the name of the film?", options: ["The Mastermind", "The Mister", "There Will Be Blood", "The Master"], answer: 1 },
     ],
     // Tier 2 - Hard
     [
@@ -94,6 +97,8 @@ const QUESTION_BANK = [
         { q: "When was the treaty of Tilsit signed?", options: ["1807", "1812", "1815", "1821"], answer: 0 },
         { q: "What does Che Guevara's famous quote 'Hasta la victoria siempre' translate to in English?", options: ["Until victory always", "Victory is certain", "Always victorious", "Victory forever"], answer: 0 },
         { q: "John Dillinger and Baby Faced Nelson committed their final joint heist in which city?", options: ["Chicago", "Cleveland", "Indianapolis", "Detroit"], answer: 2 },
+        { q: "How many assasination attempts did Fidel Castro survive?", options: ["638", "642", "645", "650"], answer: 0 },
+        { q: "Who is often referred to as the last great Viking King?", options: ["Erik the Red", "Cnut the Great", "Olaf Tryggvason", "Harald Hardrada"], answer: 3 },
         
     ]
 ];
