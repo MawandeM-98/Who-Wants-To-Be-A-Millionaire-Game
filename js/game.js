@@ -1,10 +1,6 @@
-// ============================================================
-// GAME LOGIC
-// ============================================================
-
 class MillionaireGame {
     constructor() {
-        this.phase = 'intro'; // intro | playing | won | lost | walked
+        this.phase = 'intro';
         this.playerName = '';
         this.questions = [];
         this.step = 0;
@@ -62,6 +58,8 @@ class MillionaireGame {
 
         this.selected = index;
         this.isLocked = true;
+
+        if (this.onUpdate) this.onUpdate();
 
         setTimeout(() => {
             this.revealed = true;

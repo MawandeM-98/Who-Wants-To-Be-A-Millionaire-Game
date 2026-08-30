@@ -1,7 +1,3 @@
-// ============================================================
-// DATA - Questions, Prize Ladder, Safe Havens
-// ============================================================
-
 const PRIZE_LADDER = [
     100, 200, 300, 500, 1000, 2000, 4000, 8000,
     16000, 32000, 64000, 125000, 250000, 500000, 1000000
@@ -9,7 +5,6 @@ const PRIZE_LADDER = [
 
 const SAFE_HAVENS = [1000, 32000];
 
-// Questions grouped by tier: tier 0 = easy (Q1-5), 1 = medium (Q6-10), 2 = hard (Q11-15)
 const QUESTION_BANK = [
     // Tier 0 - Easy
     [
@@ -71,8 +66,6 @@ const QUESTION_BANK = [
 ];
 
 const LETTERS = ['A', 'B', 'C', 'D'];
-
-// ----- UTILITY FUNCTIONS -----
 
 function shuffle(arr) {
     const a = [...arr];
