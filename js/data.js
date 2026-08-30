@@ -99,6 +99,8 @@ const QUESTION_BANK = [
         { q: "John Dillinger and Baby Faced Nelson committed their final joint heist in which city?", options: ["Chicago", "Cleveland", "Indianapolis", "Detroit"], answer: 2 },
         { q: "How many assasination attempts did Fidel Castro survive?", options: ["638", "642", "645", "650"], answer: 0 },
         { q: "Who is often referred to as the last great Viking King?", options: ["Erik the Red", "Cnut the Great", "Olaf Tryggvason", "Harald Hardrada"], answer: 3 },
+        { q: "In the Guy Ritchie movie titled 'Snatch' why does the character Tyrone say he didnt see the van he reversed into?", options: ["It was at a funny angle", "He was distracted", "His view was blocked by a passenger", "His rearview mirror was broken"], answer: 0 },
+        { q: "In the Paulo Coelho novel 'The Alchemist' the word 'Maktub' is used to describe destiny and can be translated as.. ?", options: ["It is written", "God has written", "It is meant to be", "God willing"], answer: 0 },
         
     ]
 ];
