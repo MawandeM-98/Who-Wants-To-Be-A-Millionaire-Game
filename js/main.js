@@ -4,11 +4,14 @@ game.onUpdate = render;
 
 const mainMusic = document.getElementById('mainMusic');
 const suspenseMusic = document.getElementById('suspenseMusic');
+const answerMusic = document.getElementById('answerMusic');
 
 // ----- AUDIO CONTROLS -----
 function playMainMusic() {
     suspenseMusic.pause();
     suspenseMusic.currentTime = 0;
+    answerMusic.pause();
+    answerMusic.currentTime = 0;
     mainMusic.currentTime = 0;
     mainMusic.play().catch(() => {});
 }
@@ -16,15 +19,30 @@ function playMainMusic() {
 function playSuspenseMusic() {
     mainMusic.pause();
     mainMusic.currentTime = 0;
+    answerMusic.pause();
+    answerMusic.currentTime = 0;
     suspenseMusic.currentTime = 0;
     suspenseMusic.play().catch(() => {});
 }
 
+function playAnswerMusic() {
+    mainMusic.pause();
+    mainMusic.currentTime = 0;
+    suspenseMusic.pause();
+    suspenseMusic.currentTime = 0;
+    answerMusic.currentTime = 0;
+    answerMusic.play().catch(() => {});
+}
+
 function handleMusic() {
-    if (game.phase === 'intro' || game.phase === 'won' || game.phase === 'lost' || game.phase === 'walked') {
+    if (game.phase === 'intro' || game.phase === 'disclaimer' || game.phase === 'won' || game.phase === 'lost' || game.phase === 'walked') {
         playMainMusic();
     } else if (game.phase === 'playing') {
-        playSuspenseMusic();
+        if (game.isAnswerPlaying) {
+            playAnswerMusic();
+        } else {
+            playSuspenseMusic();
+        }
     }
 }
 
@@ -77,8 +95,6 @@ function render() {
                     <h1 class="title">Who Wants to Be a Millionaire</h1>
                 </header>
                 ${renderContent()}
-                <!-- Hosted by MMM -->
-                <div class="hosted-by">hosted by MMM</div>
             </div>
         </div>
     `;
@@ -89,6 +105,7 @@ function render() {
 function renderContent() {
     switch (game.phase) {
         case 'intro': return renderIntro();
+        case 'disclaimer': return renderDisclaimer();
         case 'playing': return renderGame();
         case 'won': case 'lost': case 'walked': return renderResult();
         default: return '';
@@ -106,6 +123,18 @@ function renderIntro() {
     `;
 }
 
+function renderDisclaimer() {
+    return `
+        <section class="disclaimer-box">
+            <h2 class="disclaimer-title">⚠️ DISCLAIMER !!</h2>
+            <div class="disclaimer-text">
+                <p>This application is a mock version of the legally protected trademarked game show titled <strong>'Who Wants to Be a Millionaire'</strong>. It is a mock version created for personal and/or educational use and is in no way distributed on app store, play store or any other platform used to generate money using the application. It will not be commercially released, in order to avoid copyright infringement!</p>
+                <p class="fun-line">Have fun. 🎮</p>
+            </div>
+            <button id="resumeGameBtn" class="resume-btn glow-pulse">▶ RESUME GAME</button>
+        </section>
+    `;
+}
 function renderGame() {
     const q = game.currentQuestion;
     if (!q) return '<p>Loading...</p>';
@@ -220,6 +249,14 @@ function bindEvents() {
         });
     }
 
+    // Resume Game button (Disclaimer)
+    const resumeBtn = document.getElementById('resumeGameBtn');
+    if (resumeBtn) {
+        resumeBtn.addEventListener('click', () => {
+            game.startQuiz();
+        });
+    }
+
     document.querySelectorAll('.hex-plate:not(.hidden)').forEach(btn => {
         btn.addEventListener('click', () => {
             const idx = parseInt(btn.dataset.index);
@@ -236,38 +273,25 @@ function bindEvents() {
 // ----- START -----
 render();
 
-// 🔥 FIX: Auto-play music with a "click the page" overlay
+// Auto-play music on first click
 function startMusicOnFirstClick() {
     playMainMusic();
-    // Remove the overlay after first click
     const overlay = document.getElementById('startOverlay');
     if (overlay) overlay.remove();
     document.removeEventListener('click', startMusicOnFirstClick);
 }
 
-// Check if audio is already playing
-if (!mainMusic.paused) {
-    // Already playing, nothing to do
-} else {
-    // Create invisible overlay that captures first click
-    const overlay = document.createElement('div');
-    overlay.id = 'startOverlay';
-    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;cursor:pointer;background:transparent;';
-    document.body.appendChild(overlay);
-
-    // Start music on first click anywhere
-    overlay.addEventListener('click', startMusicOnFirstClick);
-    document.addEventListener('click', startMusicOnFirstClick);
-
-    // Also try to autoplay after a short delay (some browsers allow this)
-    setTimeout(() => {
-        mainMusic.play().then(() => {
-            // Success! Remove overlay
-            const overlayEl = document.getElementById('startOverlay');
-            if (overlayEl) overlayEl.remove();
-            document.removeEventListener('click', startMusicOnFirstClick);
-        }).catch(() => {
-            // Still waiting for user interaction
-        });
-    }, 500);
-}
+setTimeout(() => {
+    mainMusic.play().then(() => {
+        const overlay = document.getElementById('startOverlay');
+        if (overlay) overlay.remove();
+        document.removeEventListener('click', startMusicOnFirstClick);
+    }).catch(() => {
+        const overlay = document.createElement('div');
+        overlay.id = 'startOverlay';
+        overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999;cursor:pointer;background:transparent;';
+        document.body.appendChild(overlay);
+        overlay.addEventListener('click', startMusicOnFirstClick);
+        document.addEventListener('click', startMusicOnFirstClick);
+    });
+}, 300);

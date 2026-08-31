@@ -1,6 +1,6 @@
 class MillionaireGame {
     constructor() {
-        this.phase = 'intro';
+        this.phase = 'intro'; // intro | disclaimer | playing | won | lost | walked
         this.playerName = '';
         this.questions = [];
         this.step = 0;
@@ -11,6 +11,7 @@ class MillionaireGame {
         this.usedFifty = false;
         this.usedAudience = false;
         this.isLocked = false;
+        this.isAnswerPlaying = false;
         this.onUpdate = null;
     }
 
@@ -39,7 +40,7 @@ class MillionaireGame {
         this.playerName = trimmed;
         this.questions = buildRun();
         this.step = 0;
-        this.phase = 'playing';
+        this.phase = 'disclaimer'; // Go to disclaimer first
         this.selected = null;
         this.revealed = false;
         this.hidden = [];
@@ -47,7 +48,18 @@ class MillionaireGame {
         this.usedFifty = false;
         this.usedAudience = false;
         this.isLocked = false;
+        this.isAnswerPlaying = false;
         return true;
+    }
+
+    startQuiz() {
+        this.phase = 'playing';
+        this.selected = null;
+        this.revealed = false;
+        this.hidden = [];
+        this.votes = null;
+        this.isLocked = false;
+        if (this.onUpdate) this.onUpdate();
     }
 
     selectAnswer(index) {
@@ -65,8 +77,17 @@ class MillionaireGame {
             this.revealed = true;
             this.isLocked = false;
 
-            setTimeout(() => {
-                if (index === this.currentQuestion.answer) {
+            // Check if answer is correct
+            const isCorrect = index === this.currentQuestion.answer;
+
+            if (isCorrect) {
+                // Play Answer music
+                this.isAnswerPlaying = true;
+                if (this.onUpdate) this.onUpdate();
+
+                // After answer music finishes, advance
+                setTimeout(() => {
+                    this.isAnswerPlaying = false;
                     if (this.step === PRIZE_LADDER.length - 1) {
                         this.phase = 'won';
                     } else {
@@ -77,11 +98,17 @@ class MillionaireGame {
                         this.votes = null;
                         this.isLocked = false;
                     }
-                } else {
+                    if (this.onUpdate) this.onUpdate();
+                }, 2500); // Answer music duration
+            } else {
+                // Wrong answer - immediately show result
+                setTimeout(() => {
                     this.phase = 'lost';
-                }
-                if (this.onUpdate) this.onUpdate();
-            }, 600);
+                    if (this.onUpdate) this.onUpdate();
+                }, 600);
+            }
+
+            if (this.onUpdate) this.onUpdate();
         }, 800);
 
         if (this.onUpdate) this.onUpdate();
@@ -133,6 +160,7 @@ class MillionaireGame {
         this.usedFifty = false;
         this.usedAudience = false;
         this.isLocked = false;
+        this.isAnswerPlaying = false;
         if (this.onUpdate) this.onUpdate();
     }
 }
