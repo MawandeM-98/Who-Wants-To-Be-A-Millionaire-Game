@@ -52,6 +52,7 @@ const QUESTION_BANK = [
         { q: "In Tarantinos movie Pulp Fiction, Vincent Vega is the brother of Vic Vega from Reservoir Dogs, who goes as which alias?", options: ["Mr. White", "Mr. Pink", "Mr. Blonde", "Mr. Orange"], answer: 2 },
         { q: "As of recent sales records, which video game holds the title of the single best-selling video game of all time?", options: ["Minecraft", "Grand Theft Auto V", "Tetris", "Wii Sports"], answer: 0 },
         { q: "In Michael Mann's 1995 film Heat, which actor plays the role of the professional thief Neil McCauley?", options: ["Al Pacino", "Robert De Niro", "Val Kilmer", "Tommy Lee Jones"], answer: 1 },
+        { q: "Gilroy uses the ship as a metaphor to emphasise:", options: ["The fragility of life", "The permanence of homeland ties", "The mobility and exchange shaping Black modernity", "The destruction of diaspora identities"], answer: 2   }
     ],
     // Tier 1 - Medium
     [
@@ -98,6 +99,8 @@ const QUESTION_BANK = [
         { q: "Which of these countries has never been colonized by a European power?", options: ["Thailand", "India", "Egypt", "All of the above"], answer: 0 },
         { q: "What does the medical abbreviation 'MRI' stand for?", options: ["Magnetic Resonance Imaging", "Medical Radiology Institute", "Magneto-Resonant Imaging", "Medical Resonance Investigation"], answer: 0 },
         { q: "Breaking Bad is a popular TV series that aired from 2008 to 2013. Who played the role of Walter White?", options: ["Aaron Paul", "Bryan Cranston", "Dean Norris", "Bob Odenkirk"], answer: 1 },
+        { q: "Which example best illustrates 'double consciousness?'", options:["An African American man feeling torn between his racial identity and his American identity", "A person experiencing two different personalities", "A person having two conflicting thoughts at the same time", "A person being aware of their own thoughts and feelings"], answer: 0}
+
     ],
     // Tier 2 - Hard
     [
@@ -147,6 +150,8 @@ const QUESTION_BANK = [
         { q: " What is anemology?", options: ["The study of weather", "The study of clouds", "The study of winds", "The study of atmospheric pressure"], answer: 2 },
         { q: "What do you call the study of weather, climate and the atmosphere?", options: ["Geophysics", "Climatology", "Atmospherics", "Meteorology"], answer: 3 },
         { q: "Valpre is a brand of bottled water from which country?", options: ["South Africa", "France", "Italy", "Switzerland"], answer: 0 },
+        { q: "In what year did the Anglo-Boer War end?", options: ["1900", "1901", "1902", "1903"], answer: 2 },
+        { q: "What is the capital city of Bolivia?", options: ["La Paz", "Sucre", "Santa Cruz", "Cochabamba"], answer: 0 },
         
     ]
 ];
