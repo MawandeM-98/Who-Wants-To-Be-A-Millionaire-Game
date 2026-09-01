@@ -1,6 +1,7 @@
 /* ============================================================
    WHO WANTS TO BE A MILLIONAIRE - PURE JS
    Theme: Navy show-stage with gold accents
+   iOS Fallback: Hex colors for iOS 16.3 and below compatibility
    ============================================================ */
 
 * {
@@ -11,6 +12,8 @@
 
 body {
     font-family: 'Barlow', sans-serif;
+    /* Fallback for older iOS */
+    background: #0a0a1a;
     background: oklch(0.11 0.05 265);
     color: #e2e8f0;
     min-height: 100vh;
@@ -26,10 +29,12 @@ body {
 }
 
 .stage-bg {
+    /* Fallback for older iOS */
+    background: #0a0a1a;
     background:
-        radial-gradient(ellipse at 50% 0%, oklch(0.34 0.13 262 / 0.85), transparent 65%),
-        radial-gradient(ellipse at 50% 110%, oklch(0.3 0.12 262 / 0.7), transparent 60%),
-        linear-gradient(180deg, oklch(0.16 0.07 265), oklch(0.11 0.05 265));
+        radial-gradient(ellipse at 50% 0%, rgba(44, 62, 120, 0.85), transparent 65%),
+        radial-gradient(ellipse at 50% 110%, rgba(44, 62, 120, 0.7), transparent 60%),
+        linear-gradient(180deg, #1a1a2e, #0a0a1a);
     min-height: 100vh;
     padding: 32px 20px;
     border-radius: 12px;
@@ -50,6 +55,8 @@ body {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.5em;
+    /* Fallback for older iOS */
+    color: #b8952e;
     color: oklch(0.68 0.13 86);
 }
 
@@ -58,8 +65,10 @@ body {
     font-size: 2.5rem;
     font-weight: 900;
     margin-top: 8px;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
-    text-shadow: 0 0 18px oklch(0.83 0.15 87 / 0.35);
+    text-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
 }
 
 @media (min-width: 640px) {
@@ -72,7 +81,11 @@ body {
 .intro-box {
     max-width: 480px;
     margin: 64px auto 0;
+    /* Fallback for older iOS */
+    background: rgba(42, 42, 74, 0.6);
     background: oklch(0.26 0.11 264 / 0.6);
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border: 1px solid oklch(0.83 0.15 87 / 0.3);
     border-radius: 16px;
     padding: 32px;
@@ -83,6 +96,8 @@ body {
 .intro-box h2 {
     font-family: 'Cinzel', serif;
     font-size: 1.5rem;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
@@ -97,7 +112,11 @@ body {
     margin-top: 24px;
     padding: 12px 20px;
     border-radius: 9999px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.4);
     border: 1px solid oklch(0.83 0.15 87 / 0.4);
+    /* Fallback for older iOS */
+    background: rgba(26, 26, 46, 0.8);
     background: oklch(0.16 0.07 265 / 0.8);
     color: #e2e8f0;
     font-size: 1rem;
@@ -111,6 +130,7 @@ body {
 }
 
 .intro-box input:focus {
+    border-color: #d4af37;
     border-color: oklch(0.83 0.15 87);
 }
 
@@ -120,7 +140,11 @@ body {
     padding: 14px;
     border-radius: 9999px;
     border: none;
+    /* Fallback for older iOS */
+    background: #d4af37;
     background: oklch(0.83 0.15 87);
+    /* Fallback for older iOS */
+    color: #1a1a2e;
     color: oklch(0.16 0.07 265);
     font-family: 'Cinzel', serif;
     font-size: 1.1rem;
@@ -145,7 +169,11 @@ body {
     max-width: 480px;
     width: 92%;
     margin: 30px auto 0;
+    /* Fallback for older iOS */
+    background: rgba(42, 42, 74, 0.6);
     background: oklch(0.26 0.11 264 / 0.6);
+    /* Fallback for older iOS */
+    border: 2px solid rgba(212, 175, 55, 0.5);
     border: 2px solid oklch(0.83 0.15 87 / 0.5);
     border-radius: 20px;
     padding: 32px 28px;
@@ -172,11 +200,15 @@ body {
 }
 
 .disclaimer-text strong {
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
 .disclaimer-text .fun-line {
     margin-top: 18px;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
     text-align: center;
     font-size: 1.1rem;
@@ -190,7 +222,11 @@ body {
     padding: 14px 44px;
     border-radius: 9999px;
     border: none;
+    /* Fallback for older iOS */
+    background: #d4af37;
     background: oklch(0.83 0.15 87);
+    /* Fallback for older iOS */
+    color: #1a1a2e;
     color: oklch(0.16 0.07 265);
     font-family: 'Cinzel', serif;
     font-size: 1rem;
@@ -218,7 +254,11 @@ body {
 .hex-plate {
     position: relative;
     clip-path: polygon(4% 0, 96% 0, 100% 50%, 96% 100%, 4% 100%, 0 50%);
+    /* Fallback for older iOS */
+    background: linear-gradient(180deg, #2a2a5a, #1e1e3a);
     background: linear-gradient(180deg, oklch(0.3 0.12 263), oklch(0.19 0.08 265));
+    /* Fallback for older iOS */
+    border: 1px solid rgba(100, 120, 180, 0.7);
     border: 1px solid oklch(0.65 0.09 262 / 0.7);
     transition: all 0.2s ease;
     cursor: pointer;
@@ -235,6 +275,7 @@ body {
 }
 
 .hex-plate:hover:not(:disabled) {
+    border-color: #d4af37;
     border-color: oklch(0.83 0.15 87);
     filter: brightness(1.25);
 }
@@ -248,29 +289,47 @@ body {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     font-size: 1.1rem;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
 .hex-plate.correct {
+    /* Fallback for older iOS */
+    background: #2e8b57 !important;
     background: oklch(0.62 0.19 145) !important;
+    /* Fallback for older iOS */
+    border-color: #2e8b57 !important;
     border-color: oklch(0.62 0.19 145) !important;
     color: white !important;
 }
 
 .hex-plate.wrong {
+    /* Fallback for older iOS */
+    background: #c0392b !important;
     background: oklch(0.58 0.22 27) !important;
+    /* Fallback for older iOS */
+    border-color: #c0392b !important;
     border-color: oklch(0.58 0.22 27) !important;
     color: white !important;
 }
 
 .hex-plate.selected {
+    /* Fallback for older iOS */
+    background: #d4af37 !important;
     background: oklch(0.83 0.15 87) !important;
+    /* Fallback for older iOS */
+    border-color: #d4af37 !important;
     border-color: oklch(0.83 0.15 87) !important;
+    /* Fallback for older iOS */
+    color: #1a1a2e !important;
     color: oklch(0.16 0.07 265) !important;
     animation: pulse-lock 0.55s ease-in-out 3;
 }
 
 .hex-plate.selected .letter {
+    /* Fallback for older iOS */
+    color: #1a1a2e;
     color: oklch(0.16 0.07 265);
 }
 
@@ -304,14 +363,20 @@ body {
     justify-content: space-between;
     gap: 12px;
     padding: 12px 16px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border: 1px solid oklch(0.83 0.15 87 / 0.2);
     border-radius: 12px;
+    /* Fallback for older iOS */
+    background: rgba(42, 42, 74, 0.5);
     background: oklch(0.26 0.11 264 / 0.5);
 }
 
 .game-bar .player-name {
     font-family: 'Cinzel', serif;
     font-size: 1.1rem;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
@@ -321,6 +386,8 @@ body {
 }
 
 .game-bar .question-info strong {
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
@@ -334,8 +401,12 @@ body {
 .lifeline-btn {
     padding: 8px 20px;
     border-radius: 9999px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.5);
     border: 1px solid oklch(0.83 0.15 87 / 0.5);
     background: transparent;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
     font-family: 'Cinzel', serif;
     font-size: 0.8rem;
@@ -345,6 +416,7 @@ body {
 }
 
 .lifeline-btn:hover:not(:disabled) {
+    background: rgba(212, 175, 55, 0.15);
     background: oklch(0.83 0.15 87 / 0.15);
 }
 
@@ -362,14 +434,18 @@ body {
 }
 
 .lifeline-btn.walk:hover:not(:disabled) {
-    background: oklch(0.5 0.02 264 / 0.15);
+    background: rgba(100, 110, 140, 0.15);
 }
 
 .question-box {
     margin-top: 24px;
     padding: 32px 24px;
     border-radius: 16px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.25);
     border: 1px solid oklch(0.83 0.15 87 / 0.25);
+    /* Fallback for older iOS */
+    background: rgba(26, 26, 46, 0.8);
     background: oklch(0.16 0.07 265 / 0.8);
     text-align: center;
     font-size: 1.1rem;
@@ -391,7 +467,11 @@ body {
     gap: 12px;
     padding: 16px;
     border-radius: 12px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border: 1px solid oklch(0.83 0.15 87 / 0.2);
+    /* Fallback for older iOS */
+    background: rgba(42, 42, 74, 0.4);
     background: oklch(0.26 0.11 264 / 0.4);
 }
 
@@ -407,6 +487,8 @@ body {
     height: 96px;
     display: flex;
     align-items: flex-end;
+    /* Fallback for older iOS */
+    background: rgba(26, 26, 46, 0.7);
     background: oklch(0.16 0.07 265 / 0.7);
     border-radius: 4px;
     overflow: hidden;
@@ -414,6 +496,8 @@ body {
 
 .audience-bar {
     width: 100%;
+    /* Fallback for older iOS */
+    background: rgba(212, 175, 55, 0.8);
     background: oklch(0.83 0.15 87 / 0.8);
     border-radius: 4px 4px 0 0;
     transition: height 0.4s ease;
@@ -438,7 +522,11 @@ body {
 }
 
 .prize-ladder {
+    /* Fallback for older iOS */
+    background: rgba(26, 26, 46, 0.7);
     background: oklch(0.16 0.07 265 / 0.7);
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.25);
     border: 1px solid oklch(0.83 0.15 87 / 0.25);
     border-radius: 12px;
     padding: 12px;
@@ -469,17 +557,25 @@ body {
 }
 
 .prize-item.active {
+    /* Fallback for older iOS */
+    background: #d4af37;
     background: oklch(0.83 0.15 87);
+    /* Fallback for older iOS */
+    color: #1a1a2e;
     color: oklch(0.16 0.07 265);
     font-weight: 700;
-    box-shadow: 0 0 0 1px oklch(0.83 0.15 87 / 0.6), 0 0 34px oklch(0.83 0.15 87 / 0.28);
+    box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.6), 0 0 34px rgba(212, 175, 55, 0.28);
 }
 
 .prize-item.won {
+    /* Fallback for older iOS */
+    color: #b8952e;
     color: oklch(0.68 0.13 86);
 }
 
 .prize-item.safe {
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
     font-weight: 600;
 }
@@ -493,7 +589,11 @@ body {
     margin: 64px auto 0;
     padding: 40px;
     border-radius: 16px;
+    /* Fallback for older iOS */
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border: 1px solid oklch(0.83 0.15 87 / 0.3);
+    /* Fallback for older iOS */
+    background: rgba(42, 42, 74, 0.6);
     background: oklch(0.26 0.11 264 / 0.6);
     text-align: center;
     backdrop-filter: blur(8px);
@@ -502,6 +602,8 @@ body {
 .result-box h2 {
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
 }
 
@@ -513,6 +615,8 @@ body {
 .result-box .amount {
     font-family: 'Cinzel', serif;
     font-size: 2.5rem;
+    /* Fallback for older iOS */
+    color: #d4af37;
     color: oklch(0.83 0.15 87);
     margin-top: 8px;
 }
@@ -522,7 +626,11 @@ body {
     padding: 12px 32px;
     border-radius: 9999px;
     border: none;
+    /* Fallback for older iOS */
+    background: #d4af37;
     background: oklch(0.83 0.15 87);
+    /* Fallback for older iOS */
+    color: #1a1a2e;
     color: oklch(0.16 0.07 265);
     font-family: 'Cinzel', serif;
     font-size: 1rem;
